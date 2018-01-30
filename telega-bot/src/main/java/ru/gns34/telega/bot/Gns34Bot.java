@@ -20,10 +20,10 @@ public class Gns34Bot extends TelegramLongPollingBot {
 
 	@Override
 	public void onUpdateReceived(Update update) {
-		System.out.println("DDDD" + update);
+		System.out.println("DDDD:: " + update);
 		SendMessage message = new SendMessage();
 		message.setChatId(update.getMessage().getChatId());
-		message.setText(update.getMessage().getText());
+		message.setText("А я тебе пишу " + update.getMessage().getText());
 		try {
 			execute(message);
 		} catch (TelegramApiException e) {
